@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ accordion</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+</head>
+<body>
+    <div id="root">
+        <!-- root -->
+    </div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const { React, ReactDOM } = window;
+
+        const App = () => {
+            return(
+                <>
+                <img src="assets/images/illustration-box-desktop.svg" id="cube"></img>
+                    <aside>
+                        {/*<img src="assets/images/illustration-box-desktop.svg"></img>*/}
+                        <img src="assets/images/illustration-woman-online-desktop.svg"></img>
+                    </aside>
+                    <article>
+                        <h1>faq</h1>
+                        <section id="accordion">
+                            <details>
+                                <summary>how many team members i can invite?<img src="assets/images/icon-arrow-down.svg"></img></summary>
+                                <p>
+                                    lorem ipsum dololor sit a met a met a met dololor
+                                    ipsum sit a IPSUM dollor a met ipsum chalenge and
+                                    grive to me a frient and designe me to explaineds
+                                    klsksksskksksks eiasjs e sjh siiijsjks sisikas wii
+                                </p>
+                            </details>
+                            <details>
+                                <summary>how many team members i can invite?<img src="assets/images/icon-arrow-down.svg"></img></summary>
+                                <p>
+                                    lorem ipsum dololor sit a met a met a met dololor
+                                    ipsum sit a IPSUM dollor a met ipsum chalenge and
+                                    grive to me a frient and designe me to explaineds
+                                    klsksksskksksks eiasjs e sjh siiijsjks sisikas wii
+                                </p></details>
+                            <details>
+                                <summary>how many team members i can invite?<img src="assets/images/icon-arrow-down.svg"></img></summary>
+                                <p>
+                                    lorem ipsum dololor sit a met a met a met dololor
+                                    ipsum sit a IPSUM dollor a met ipsum chalenge and
+                                    grive to me a frient and designe me to explaineds
+                                    klsksksskksksks eiasjs e sjh siiijsjks sisikas wii
+                                </p></details>
+                            <details>
+                                <summary>how many team members i can invite?<img src="assets/images/icon-arrow-down.svg"></img></summary>
+                                <p>
+                                    lorem ipsum dololor sit a met a met a met dololor
+                                    ipsum sit a IPSUM dollor a met ipsum chalenge and
+                                    grive to me a frient and designe me to explaineds
+                                    klsksksskksksks eiasjs e sjh siiijsjks sisikas wii
+                                </p></details>
+                            <details>
+                                <summary>how many team members i can invite?<img src="assets/images/icon-arrow-down.svg"></img></summary>
+                                <p>
+                                    lorem ipsum dololor sit a met a met a met dololor
+                                    ipsum sit a IPSUM dollor a met ipsum chalenge and
+                                    grive to me a frient and designe me to explaineds
+                                    klsksksskksksks eiasjs e sjh siiijsjks sisikas wii
+                                </p></details>
+                        </section>
+                    </article>
+                </>
+            )
+        }
+        ReactDOM.render(<App/>, document.querySelector("#root"))
+    </script>
+</body>
+</html>

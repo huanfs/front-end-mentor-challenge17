@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         const { React, ReactDOM } = window;
-
+        const { useState } = React
         const App = () => {
             return(
                 <>
@@ -27,50 +27,56 @@
                     <article>
                         <h1>faq</h1>
                         <section id="accordion">
-                            <details>
-                                <summary>how many team members i can invite?<img src="assets/images/icon-arrow-down.svg"></img></summary>
-                                <p>
-                                    lorem ipsum dololor sit a met a met a met dololor
-                                    ipsum sit a IPSUM dollor a met ipsum chalenge and
-                                    grive to me a frient and designe me to explaineds
-                                    klsksksskksksks eiasjs e sjh siiijsjks sisikas wii
-                                </p>
-                            </details>
-                            <details>
-                                <summary>how many team members i can invite?<img src="assets/images/icon-arrow-down.svg"></img></summary>
-                                <p>
-                                    lorem ipsum dololor sit a met a met a met dololor
-                                    ipsum sit a IPSUM dollor a met ipsum chalenge and
-                                    grive to me a frient and designe me to explaineds
-                                    klsksksskksksks eiasjs e sjh siiijsjks sisikas wii
-                                </p></details>
-                            <details>
-                                <summary>how many team members i can invite?<img src="assets/images/icon-arrow-down.svg"></img></summary>
-                                <p>
-                                    lorem ipsum dololor sit a met a met a met dololor
-                                    ipsum sit a IPSUM dollor a met ipsum chalenge and
-                                    grive to me a frient and designe me to explaineds
-                                    klsksksskksksks eiasjs e sjh siiijsjks sisikas wii
-                                </p></details>
-                            <details>
-                                <summary>how many team members i can invite?<img src="assets/images/icon-arrow-down.svg"></img></summary>
-                                <p>
-                                    lorem ipsum dololor sit a met a met a met dololor
-                                    ipsum sit a IPSUM dollor a met ipsum chalenge and
-                                    grive to me a frient and designe me to explaineds
-                                    klsksksskksksks eiasjs e sjh siiijsjks sisikas wii
-                                </p></details>
-                            <details>
-                                <summary>how many team members i can invite?<img src="assets/images/icon-arrow-down.svg"></img></summary>
-                                <p>
-                                    lorem ipsum dololor sit a met a met a met dololor
-                                    ipsum sit a IPSUM dollor a met ipsum chalenge and
-                                    grive to me a frient and designe me to explaineds
-                                    klsksksskksksks eiasjs e sjh siiijsjks sisikas wii
-                                </p></details>
+                            <Summary 
+                            title="how many team memebers i can invite?"
+                            text="Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met "/>
+                            <Summary title="what maximun upsload size file?"
+                            text="no more than 2gb. All files in your account
+                            must fit your allotted storage space"/>
+                            <Summary title="How do i reset my password?"
+                            text="Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met "/>
+                            <Summary title="can i cancel my subscription?"
+                            text="Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met "/>
+                            <Summary title="do you provide aditional support?"
+                            text="Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met 
+                            Lorem ipsum dollor sit a met "/>
                         </section>
                     </article>
                 </>
+            )
+        }
+        const Summary = ({title, text}) => {
+            const[state, setState] = useState(false);
+            function Arrow(event){
+                setState(!state);
+                let imgSource = document.querySelector("#arrow");
+                console.log(state);
+                if(state===false){
+                    event.target.children[0].className="arrowUp"
+                }
+                else if(state===true){
+                    event.target.children[0].className="arrowDown"
+                }
+                console.log(event.target.className);
+            }
+            return(
+            <details>
+                <summary onClick={Arrow}>{title}<img id="arrow" className="arrowDown" src="assets/images/icon-arrow-down.svg"></img></summary>
+                <p>
+                    {text}
+                </p>
+            </details>
             )
         }
         ReactDOM.render(<App/>, document.querySelector("#root"))
